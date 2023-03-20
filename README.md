@@ -9,9 +9,9 @@ This website was built using HTML, CSS, JavaScript which uses an external API.
 
 ## Features
 
-● Load data from an external source (API)
-● View a list of items
-● On user action (e.g., by clicking on a list item), view details for that item
+- Load data from an external source (API)
+- View a list of items
+- On user action (e.g., by clicking on a list item), view details for that item
 
 ## Credits
 
