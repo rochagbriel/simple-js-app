@@ -1,4 +1,4 @@
-let pokemonList = [
+const pokemonList = [
     {
         id: 1,
         name:'Bulbasaur',
