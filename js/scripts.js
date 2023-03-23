@@ -20,10 +20,10 @@ const pokemonList = [
 ];
 
 // this loop prints the Pokemon name and size in individual html paragraphs
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >= 0.7) {
-        document.write(`<p>${pokemonList[i].name}(height: ${pokemonList[i].height}m) - Wow, that's big!</p>`); //this conditional check if the pokemon size is 0.7m or bigger
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height >= 0.7) {
+        document.write(`<p>${pokemon.name}(height: ${pokemon.height}m) - Wow, that's big!</p>`); //this conditional check if the pokemon size is 0.7m or bigger
     } else {
-        document.write(`<p>${pokemonList[i].name}(height: ${pokemonList[i].height}m)</p>`);
+        document.write(`<p>${pokemon.name}(height: ${pokemon.height}m)</p>`);
     }
-}
+});
