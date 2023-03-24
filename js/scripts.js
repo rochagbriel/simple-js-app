@@ -1,5 +1,5 @@
 let pokemonRepository = (function () {
-    const pokemonList = [
+    let pokemonList = [
         {
             id: 1,
             name:'Bulbasaur',
