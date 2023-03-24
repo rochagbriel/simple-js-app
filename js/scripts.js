@@ -22,11 +22,13 @@ let pokemonRepository = (function () {
 
     //function to check if tha Added data is an object
     function addv() {
-        typeof add === 'object' ? true : false;
+       return typeof add === 'object' ? true : false;
     }
     //function to add a New Pokemon
     function add(pokemon) {
-       addv === true ? pokemonList.push(pokemon) : console.log("Incorrect input type");
+       addv(pokemon) 
+        ? pokemonList.push(pokemon) 
+        : console.error("Incorrect input type");
     }
     //function to get all pokemon in pokemonList
     function getAll() {
