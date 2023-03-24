@@ -34,21 +34,25 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
+    function addListItem(pokemon) {
+        let list = document.querySelector('.pokemon-list');
+        let listIten = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        list.appendChild(listIten);
+        listIten.appendChild(button);
+    }
 
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem
     };
 
 })();
 
 // this loop prints the Pokemon name and size in individual html paragraphs
 pokemonRepository.getAll().forEach(function(pokemon) {
-    let list = document.querySelector('.pokemon-list');
-    let listIten = document.createElement('li');
-    let button = document.createElement('button');
-    button.innerText = pokemon.name;
-    button.classList.add('pokemon-button');
-    list.appendChild(listIten);
-    listIten.appendChild(button);
+    pokemonRepository.addListItem(pokemon);
 });
