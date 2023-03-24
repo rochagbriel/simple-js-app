@@ -44,9 +44,11 @@ let pokemonRepository = (function () {
 
 // this loop prints the Pokemon name and size in individual html paragraphs
 pokemonRepository.getAll().forEach(function(pokemon) {
-    if (pokemon.height >= 0.7) {
-        document.write(`<p>${pokemon.name}(height: ${pokemon.height}m) - Wow, that's big!</p>`);
-    } else {
-        document.write(`<p>${pokemon.name}(height: ${pokemon.height}m)</p>`);
-    }
+    let list = document.querySelector('.pokemon-list');
+    let listIten = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemon-button');
+    list.appendChild(listIten);
+    listIten.appendChild(button);
 });
