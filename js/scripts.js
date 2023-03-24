@@ -42,6 +42,12 @@ let pokemonRepository = (function () {
         button.classList.add('pokemon-button');
         list.appendChild(listIten);
         listIten.appendChild(button);
+        button.addEventListener('click', function() {
+            showDetails(pokemon);
+        })
+    }
+    function showDetails(pokemon) {
+        console.log(pokemon) // It will print the pokemon object, is will want only a name just add .name
     }
 
     return {
