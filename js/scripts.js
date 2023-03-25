@@ -21,7 +21,7 @@ let pokemonRepository = (function () {
     ];
 
     //function to check if tha Added data is an object
-    function addv() {
+    function addv(add) {
        return typeof add === 'object' ? true : false;
     }
     //function to add a New Pokemon
@@ -47,7 +47,7 @@ let pokemonRepository = (function () {
         })
     }
     function showDetails(pokemon) {
-        console.log(pokemon) // It will print the pokemon object, is will want only a name just add .name
+        console.log(pokemon.name)
     }
 
     return {
