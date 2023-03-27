@@ -3,7 +3,7 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
-    //function to add a New Pokemon
+    //function to create and validade a New Pokemon object
     function add(pokemon) {
         if (
             typeof pokemon === 'object' &&
@@ -18,6 +18,7 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
+    //this function generate a listened button 
     function addListItem(pokemon) {
         let list = document.querySelector('.pokemon-list');
         let listIten = document.createElement('li');
@@ -30,7 +31,7 @@ let pokemonRepository = (function () {
             showDetails(pokemon);
         })
     }
-
+    //function as a return key that uses fetch to GET the complete list of Pokémon from the API URL
     function loadList() {
         return fetch(apiUrl).then(function (response) {
           return response.json();
@@ -46,7 +47,7 @@ let pokemonRepository = (function () {
           console.error(e);
         })
     }
-
+    //This function fetch data from API and create objects with requested info.
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -60,7 +61,7 @@ let pokemonRepository = (function () {
           console.error(e);
         });
     }
-
+    //This function display all details loaded at loadDetails function
     function showDetails(item) {
         pokemonRepository.loadDetails(item).then(function () 
         {
@@ -80,7 +81,6 @@ let pokemonRepository = (function () {
 })();
 
 pokemonRepository.loadList().then(function() {
-    // this loop prints the Pokemon name and size in individual html paragraphs
     pokemonRepository.getAll().forEach(function(pokemon) {
         pokemonRepository.addListItem(pokemon);
     });
