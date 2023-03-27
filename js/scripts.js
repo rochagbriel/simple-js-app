@@ -33,6 +33,7 @@ let pokemonRepository = (function () {
     }
     //function as a return key that uses fetch to GET the complete list of Pokémon from the API URL
     function loadList() {
+        showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
           return response.json();
         }).then(function (json) {
@@ -42,15 +43,19 @@ let pokemonRepository = (function () {
               detailsUrl: item.url
             };
             add(pokemon);
+            hideLoadingMessage();
           });
         }).catch(function (e) {
           console.error(e);
+          hideLoadingMessage();
         })
     }
     //This function fetch data from API and create objects with requested info.
     function loadDetails(item) {
+        showLoadingMessage();
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
+            hideLoadingMessage();
           return response.json();
         }).then(function (details) {
           // Now we add the details to the item
@@ -59,6 +64,7 @@ let pokemonRepository = (function () {
           item.types = details.types;
         }).catch(function (e) {
           console.error(e);
+          hideLoadingMessage();
         });
     }
     //This function display all details loaded at loadDetails function
@@ -67,6 +73,28 @@ let pokemonRepository = (function () {
         {
             console.log(item)
         });
+    }
+
+    // Function for generating loading message
+    function showLoadingMessage() {
+        // Create an element for the "loading" message
+        const loadingMessage = document.createElement('p');
+        loadingMessage.innerText = 'LOADING!'
+        loadingMessage.classList.add('loading-message');
+    
+        // Add the loading message to the body of the document
+        document.body.appendChild(loadingMessage);  
+    }
+  
+    // Function for deleting loading message
+    function hideLoadingMessage() {
+        // Select the "loading" message element
+        const loadingMessage = document.querySelector('.loading-message');
+    
+        // Remove the "loading" message from the body of the document
+        if (loadingMessage) {
+        document.body.removeChild(loadingMessage);
+        }
     }
 
     return {

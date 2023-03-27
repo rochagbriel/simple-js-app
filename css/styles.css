@@ -46,3 +46,9 @@ li {
 .pokemon-button:hover , .pokemon-button:active {
     background-color: rgba(135, 97, 97, 0.128);
 }
+
+.loading-message {
+    position: fixed;
+    top: 6%;
+    left: 46%;
+}
