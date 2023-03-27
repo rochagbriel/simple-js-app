@@ -48,7 +48,12 @@ li {
 }
 
 .loading-message {
+    text-align: center;
+    border: 2px solid rgb(123, 123, 123);
+    background-color: rgb(255, 255, 255);
+    width: 128px;
+    padding: 8px;
     position: fixed;
     top: 6%;
-    left: 46%;
+    left: 44%;
 }
