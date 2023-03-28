@@ -3,16 +3,15 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 
-    //function to create and validade a New Pokemon object
+    //function to check if tha Added data is an object
+    function addv(add) {
+        return typeof add === 'object' ? true : false;
+    }
+    //function to add a New Pokemon
     function add(pokemon) {
-        if (
-            typeof pokemon === 'object' &&
-            'name' in pokemon
-        ) {
-            pokemonList.push(pokemon);
-        } else {
-            console.error('Incorrect input type');
-        }
+        addv(pokemon) 
+         ? pokemonList.push(pokemon) 
+         : console.error("Incorrect input type");
     }
     //function to get all pokemon in pokemonList
     function getAll() {
