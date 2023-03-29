@@ -6,7 +6,7 @@ let pokemonRepository = (function () {
     // Function to check if tha Added data is an object
 
     function addv(add) {
-        return typeof add === 'object' ? true : false;
+        return (typeof add === 'object' && 'name' in add);
     }
 
     // Function to add a New Pokemon
