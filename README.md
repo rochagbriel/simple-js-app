@@ -1,11 +1,11 @@
 # PokéDex
 
-A small web application with HTML, CSS, and JavaScript that loads
+A small web application with HTML, CSS, JavaScript and Bootstrap that loads
 data from an external API and allows you to view the data points in detail. It is a simulation of the Pokédex from the Pokémon cartoon.
 
 ## Technologies Used
 
-This website was built using HTML, CSS, JavaScript which uses an external API.
+This website was built using HTML, CSS, JavaScript, Bootstrap which uses an external API.
 
 ## Features
 
