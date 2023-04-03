@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
 
     // Function to check if tha Added data is an object
@@ -25,12 +25,13 @@ let pokemonRepository = (function () {
     // This function generate a listened button 
     function addListItem(pokemon) {
         let list = document.querySelector('.pokemon-list');
-        let listIten = document.createElement('li');
+        let listItem = document.createElement('li');
         let button = document.createElement('button');
         button.innerText = pokemon.name;
-        button.classList.add('pokemon-button');
-        list.appendChild(listIten);
-        listIten.appendChild(button);
+        button.classList.add('pokemon-button','btn','btn-primary');
+        listItem.classList.add('list-group-item')
+        list.appendChild(listItem);
+        listItem.appendChild(button);
         button.addEventListener('click', function () {
             showDetails(pokemon);
         })
