@@ -2,7 +2,6 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
-
     // Function to check if tha Added data is an object
 
     function addv(add) {
@@ -24,13 +23,16 @@ let pokemonRepository = (function () {
     }
     // This function generate a listened button 
     function addListItem(pokemon) {
+
         let list = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
+
         button.innerText = pokemon.name;
         button.classList.add('pokemon-button','btn','btn-primary');
         button.setAttribute('data-toggle', 'modal')
         button.setAttribute('data-target', '#modal-container')
+
         listItem.classList.add('list-group-item');
         list.appendChild(listItem);
         listItem.appendChild(button);
