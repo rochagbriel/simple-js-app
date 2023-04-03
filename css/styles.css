@@ -18,33 +18,17 @@ body {
     padding: 5px;
 }
 
-ul {
-    margin: 0 auto;
-    border: 1px solid rgb(123, 123, 123);
-    padding: 10px;
-}
-
-li {
-    text-align: center;
-    list-style: none;
-}
-
 .pokemon-button {
-    text-align: left;
-    border: 2px solid rgb(123, 123, 123)#000000;
-    width: 280px;
-    height: 30px;
-    margin: 4px 2px;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: white;
+    width: 100%;
+    background-color: transparent;
     color: black;
-    transition: 0.4s;
+    border: solid rgb(123, 123, 123);
 }
 
-.pokemon-button:hover , .pokemon-button:active {
-    background-color: rgba(135, 97, 97, 0.128);
+.pokemon-button:hover {
+    background-color: rgb(163, 163, 163);
+    border: 3px solid black;
+    color: #fff;
 }
 
 .loading-message {
