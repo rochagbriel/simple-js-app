@@ -29,7 +29,7 @@ let pokemonRepository = (function () {
         let button = document.createElement('button');
 
         button.innerText = pokemon.name;
-        button.classList.add('pokemon-button','btn','btn-primary');
+        button.classList.add('pokemon-button', 'btn', 'btn-primary');
         button.setAttribute('data-toggle', 'modal')
         button.setAttribute('data-target', '#modal-container')
 
@@ -98,7 +98,7 @@ let pokemonRepository = (function () {
 
     function hideLoadingMessage() {
         // Select the "loading" message element
-        const loadingMessage = document.querySelector('.loading-message');
+        const loadingMessage = document.querySelector(".loading-message");
 
         // Remove the "loading" message from the body of the document
         if (loadingMessage) {
@@ -127,7 +127,7 @@ let pokemonRepository = (function () {
         pokemonName.innerHTML = `${item.id} - ${item.name}`;
 
         let pokemonHeight = document.createElement('p');
-        pokemonHeight.innerHTML = `Height: ${(item.height)/10} m`;
+        pokemonHeight.innerHTML = `Height: ${(item.height) / 10} m`;
 
         let pokemonImg = document.createElement('img');
         pokemonImg.classList.add('pokemon-photo', 'modal-img')
