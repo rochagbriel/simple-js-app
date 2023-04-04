@@ -1,3 +1,5 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-undef */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
@@ -23,6 +25,7 @@
   };
 
   function isDataView(obj) {
+    // eslint-disable-next-line no-prototype-builtins
     return obj && DataView.prototype.isPrototypeOf(obj)
   }
 

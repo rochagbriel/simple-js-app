@@ -13,7 +13,7 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         addv(pokemon)
             ? pokemonList.push(pokemon)
-            : console.error("Incorrect input type");
+            : console.error('Incorrect input type');
     }
 
     // Function to get all pokemon in pokemonList
@@ -98,7 +98,7 @@ let pokemonRepository = (function () {
 
     function hideLoadingMessage() {
         // Select the "loading" message element
-        const loadingMessage = document.querySelector(".loading-message");
+        const loadingMessage = document.querySelector('.loading-message');
 
         // Remove the "loading" message from the body of the document
         if (loadingMessage) {
